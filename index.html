@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Öğrenci Bilgi Sistemi (OBS)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Üst başlık -->
+  <div class="header">
+    <h1>🎓 Öğrenci Bilgi Sistemi (OBS)</h1>
+  </div>
+
+  <div class="container">
+
+    <!-- İki kart: toplam öğrenci ve sınıf ortalaması -->
+    <div class="cards">
+      <div class="card">
+        <p>Toplam Öğrenci</p>
+        <h2 id="total">0</h2>
+      </div>
+      <div class="card">
+        <p>Sınıf Ortalaması</p>
+        <h2 id="average">0</h2>
+      </div>
+    </div>
+
+    <!-- Öğrenci listesi -->
+    <div class="panel">
+      <div class="top-bar">
+        <h2>Öğrenci Listesi</h2>
+        <input type="text" id="searchInput" placeholder="Öğrenci ID ile Ara..." onkeyup="showStudents()">
+        <button class="btn blue" onclick="openAddBox()">Yeni Öğrenci Ekle +</button>
+      </div>
+
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Ad Soyad</th>
+          <th>Not</th>
+          <th>İşlemler</th>
+        </tr>
+        <tbody id="rows"></tbody>
+      </table>
+
+      <p id="emptyMessage">Öğrenci bulunamadı.</p>
+    </div>
+  </div>
+
+  <!-- Not güncelleme kutusu (başta gizli) -->
+  <div class="overlay" id="gradeBox">
+    <div class="box">
+      <h3>Not Güncelleme</h3>
+      <p>Mevcut not: <span id="oldGrade"></span></p>
+      <label>Yeni Not</label>
+      <input type="text" id="newGrade">
+      <div class="buttons">
+        <button class="btn gray" onclick="closeBoxes()">Vazgeç</button>
+        <button class="btn blue" onclick="updateGrade()">Kaydet</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Yeni öğrenci ekleme kutusu (başta gizli) -->
+  <div class="overlay" id="addBox">
+    <div class="box">
+      <h3>Yeni Öğrenci</h3>
+      <label>ID</label>
+      <input type="text" id="addId">
+      <label>Ad Soyad</label>
+      <input type="text" id="addName">
+      <label>Not</label>
+      <input type="text" id="addGrade">
+      <div class="buttons">
+        <button class="btn gray" onclick="closeBoxes()">Vazgeç</button>
+        <button class="btn blue" onclick="addStudent()">Kaydet</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
