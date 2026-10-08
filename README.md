@@ -3,7 +3,7 @@
 
 C++ dersinde öğrendiğim struct, pointer ve fonksiyonları pekiştirmek için yaptığım küçük bir öğrenci yönetim projesi. Önce konsol uygulaması olarak yazdım, sonra aynı mantığı HTML, CSS ve JavaScript ile web sayfasına uyarladım.
 
-Canlı demo: https://merve14-eng.github.io/OBS-Student-Management/
+Canlı demo: https://merveklnbcgl.github.io/OBS-Student-Management/
 
 Özellikler:
 
